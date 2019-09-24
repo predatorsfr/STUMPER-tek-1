@@ -1,0 +1,6 @@
+Bonjour
+je suis absolument con j'ecrit pour juste tester ce programme
+en passant je fait pleins de fautes car je usi une bite en fr et cela de puis mon enfance
+sinon faire man gcc ces ultra long.
+pour tester le programme il faut faire ./cesar -f file key
+sinon pour le -s on y bosse.

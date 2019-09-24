@@ -1,0 +1,61 @@
+/*
+** EPITECH PROJECT, 2018
+** connect4
+** File description:
+** game
+*/
+
+#include <stdbool.h>
+#include <errno.h>
+
+#include "my.h"
+
+int scan_input(char player)
+{
+	int data = 0;
+	int nb = 0;
+
+	errno = 0;
+	printf("Player %c, where do you whant to play : ", player);
+	while (nb != 1) {
+		nb = scanf("%d", &data);
+		if (nb == EOF)
+			exit(0);
+		if (nb < 0)
+			return -1;
+		else if (nb == 0)
+			data = 0;
+	}
+	if (errno != 0) {
+		perror("scanf");
+		return -1;
+	}
+	return data;
+}
+
+bool get_input(stct_t *all, int *new_data)
+{
+	int data = -1;
+
+	while (data == -1)
+		data = scan_input(all->player1);
+	if (data < 1 || data > all->width) {
+		fprintf(stderr, "you must play between 1 and %d\n",
+			all->width);
+		get_input(all, new_data);
+	} else
+		*new_data = data;
+	return true;
+}
+
+bool game(stct_t *all)
+{
+	int data = 0;
+	
+	get_input(all, &data);
+	all.tab[
+	printf("%d\n", data);
+	get_input(all, &data);
+	printf("%d\n", data);
+	return true;
+}

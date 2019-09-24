@@ -1,0 +1,47 @@
+/*
+** EPITECH PROJECT, 2018
+** build_tab.c
+** File description:
+** building the tab
+*/
+
+#include "my.h"
+
+void first_and_last_line(stct_t all)
+{
+	for(int i = 0; i != all.width + 2; i++)
+		printf("+");
+	printf("\n");
+}
+
+void print_tab(stct_t all)
+{
+	first_and_last_line(all);
+	for (int i = 0 ; i != all.height; i++) {
+		printf("|");
+		printf("%s",all.tab[i]);
+		printf("|\n");
+	}
+	first_and_last_line(all);
+}
+
+void build_tab(stct_t all)
+{
+	all.tab = malloc(sizeof(char*) * all.height);
+	int j = 0;
+	all.width = 7;
+	all.height = 6;
+	int i;
+
+	all.ta
+	for(i = 0; i != all.height; i++) {
+		all.tab[i] = malloc(sizeof(char) * all.width + 2);
+		while( j != all.width) {
+			all.tab[i][j] = '.';
+			j++;
+		}
+		j = 0;
+	}
+//	printf("%s\n",all.tab[0]);
+	print_tab(all);
+}
